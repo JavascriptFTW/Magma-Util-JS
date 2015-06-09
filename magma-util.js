@@ -104,7 +104,7 @@ var MAGMAUTIL = (function() {
 		merge:function(o) {
 			var args = [];
 			for (var i = 1; i < arguments.length; i ++) {
-				args.push(arguments[i])''
+				args.push(arguments[i]);
 			}
 
 			mergeObjects.apply(o, args);
