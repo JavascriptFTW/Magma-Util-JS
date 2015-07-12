@@ -44,7 +44,7 @@ var MAGMAUTIL = (function() {
 		/**
 		  * Method for shuffling the contents of an array.
 		  * Author-Joshua
-		  * Last Updated-2015/8/6
+		  * Last Updated-2015/6/8
 		  */
 		//Create a copy of the array we're operating on that DOESN'T pass by reference
 	    var prevArray = this.slice();
@@ -82,7 +82,7 @@ var MAGMAUTIL = (function() {
 			/**
 			  * Shortcut method for getting a random number between two values
 			  * Author-Joshua
-			  * Last Updated-2015/8/6
+			  * Last Updated-2015/6/8
 			  */
 			if(arguments.length < 2) {
 				hi = lo;
@@ -100,8 +100,25 @@ var MAGMAUTIL = (function() {
 		},
 	};
 
+	var suffixes = ["th", "st", "nd", "rd", "th", "th", "th", "th", "th", "th"];
+
+	Util.number = {
+		suffix:function(n) {
+			/**
+			  * Method to get a numbers suffix for a string (firST, secoND, thiRD, fourTH, etc.)
+			  * Author-Joshua
+			  * Last updated 2015/6/11
+			  */
+			var numString = n.toString();
+			return suffixes[numString[numString.length - 1]];
+		},
+	};
+
 	Util.object = {
 		merge:function(o) {
+			/**
+			  * TODO:Implement method to recursively deep merge objects
+			  */
 			var args = [];
 			for (var i = 1; i < arguments.length; i ++) {
 				args.push(arguments[i]);
